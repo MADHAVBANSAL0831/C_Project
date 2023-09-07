@@ -1,16 +1,3 @@
-
-None selected 
-
-Skip to content
-Using CHITKARA UNIVERSITY Mail with screen readers
-1 of 42
-(no subject)
-Inbox
-Madhav Bansal <madhav0831.be21@chitkara.edu.in>
-	
-7:15 PM (3 hours ago)
-	
-to me
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
