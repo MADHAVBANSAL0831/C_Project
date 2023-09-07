@@ -16,7 +16,7 @@ struct orders
     int numOfItems;
     struct items itm[50];
 };
-// functions to generate biils
+
 void generateBillHeader(char name[50], char date[30])
 {
     printf("\n\n");
@@ -48,7 +48,7 @@ void generateBillFooter(float total)
     printf("\n");
     float dis = 0.1 * total;
     float netTotal = total - dis;
-    float cgst = 0.09 * netTotal, grandTotal = netTotal + 2 * cgst; // netTotal + cgst + sgst
+    float cgst = 0.09 * netTotal, grandTotal = netTotal + 2 * cgst;
     printf("-----------------------------------------------------------\n");
     printf("Sub Total\t\t\t\t\t%.2f", total);
     printf("\nDiscount @10%s\t\t\t\t\t%.2f", "%", dis);
@@ -106,11 +106,9 @@ int main()
     char saveBill = 'y', contFlag = 'y';
     char name[50];
     FILE *fp;
-    // dashboard
+
     while (contFlag == 'y')
     {
-
-        system("clear");
         float total = 0;
         int invoiceFound = 0;
         printf("\t============ADV. RESTAURANT============");
@@ -126,7 +124,6 @@ int main()
         switch (opt)
         {
         case 1:
-            system("clear");
             printf("\nPlease enter the name of the customer:\t");
             fgets(ord.customer, 50, stdin);
             ord.customer[strlen(ord.customer) - 1] = 0;
@@ -202,7 +199,6 @@ int main()
             break;
 
         case 2:
-            system("clear");
             fp = fopen("RestaurantBill.dat", "r");
             printf("\n  *****Your Previous Invoices*****\n");
             while (fread(&order, sizeof(struct orders), 1, fp))
@@ -221,10 +217,8 @@ int main()
 
         case 3:
             printf("Enter the name of the customer:\t");
-            // fgetc(stdin);
             fgets(name, 50, stdin);
             name[strlen(name) - 1] = 0;
-            system("clear");
             fp = fopen("RestaurantBill.dat", "r");
             printf("\t*****Invoice of %s*****", name);
             while (fread(&order, sizeof(struct orders), 1, fp))
