@@ -140,7 +140,7 @@ int main()
     char saveBill = 'y', contFlag = 'y';
     char name[50];
     FILE *fp;
-    // dashboard
+    
     while (contFlag == 'y')
     {
         float total = 0;
