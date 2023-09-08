@@ -16,13 +16,17 @@ Managing bills and invoices is a fundamental aspect of various businesses, from 
 
 Features-->
 1. User-Friendly Interface
+
 The program offers a straightforward and intuitive command-line interface. Even users with minimal technical knowledge can easily navigate and utilize its features.
 
 2. Input Validation
+
 To ensure data accuracy and prevent common errors, the program incorporates robust input validation. It detects and rejects invalid entries, such as negative quantities or incorrect price formats, ensuring that the generated bills are accurate.
 
 3. Detailed Billing
+
 The generated bills include a comprehensive itemized list. Each item is presented with its name, quantity, price per unit, and the total cost. This level of detail is essential for transparency and record-keeping.
 
 4. File Export
+
 Users have the option to save their generated bills to a text file. This feature is particularly useful for archiving, printing, or sharing bills with clients or business partners. The exported bills are well-formatted and easy to read.
