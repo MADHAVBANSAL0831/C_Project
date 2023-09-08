@@ -80,6 +80,40 @@ int checkNum(char str[])
     return 1;
 }
 
+int checkfloat(char str[])
+{
+    int i=0;
+    int flag=1;
+    while (str[i] != '\0')
+    {
+        if (str[i] >= '0' && str[i] <= '9')
+        {
+            i++;
+            continue;
+        }
+        else
+        if(str[i]=='.' && flag==1)
+        {
+            flag=0;
+            i++;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+float stringToFloat(char str[])
+{
+    float floatValue;
+    floatValue = atof(str);
+
+    return floatValue;
+}
+
 int stringToNum(char str[])
 {
     int num = 0;
@@ -174,16 +208,16 @@ int main()
                 unit = stringToNum(str);
                 ord.itm[i].qty = unit;
 
-                int unit_price;
+                float unit_price;
                 printf("Please enter the unit price:\t");
                 scanf("%s", &str);
-                while (checkNum(str) == 0)
+                while (checkfloat(str) == 0)
                 {
                     printf("\nPrice is invalid, Please Try again\n\n");
                     printf("Please enter the unit price:\t");
                     scanf("%s", &str);
                 }
-                unit_price = stringToNum(str);
+                unit_price = stringToFloat(str);
                 ord.itm[i].price = unit_price;
 
                 total += ord.itm[i].qty * ord.itm[i].price;
@@ -201,7 +235,7 @@ int main()
 
             if (saveBill == 'y')
             {
-                fp = fopen("RestaurantBill.dat", "a+");
+                fp = fopen("RestaurantBill.txt", "a+");
                 fwrite(&ord, sizeof(struct orders), 1, fp);
                 if (fwrite != 0)
                     printf("\nSuccessfully saved");
@@ -212,7 +246,7 @@ int main()
             break;
 
         case 2:
-            fp = fopen("RestaurantBill.dat", "r");
+            fp = fopen("RestaurantBill.txt", "r");
             printf("\n  *****Your Previous Invoices*****\n");
             while (fread(&order, sizeof(struct orders), 1, fp))
             {
@@ -233,7 +267,7 @@ int main()
             // fgetc(stdin);
             fgets(name, 50, stdin);
             name[strlen(name) - 1] = 0;
-            fp = fopen("RestaurantBill.dat", "r");
+            fp = fopen("RestaurantBill.txt", "r");
             printf("\t*****Invoice of %s*****", name);
             while (fread(&order, sizeof(struct orders), 1, fp))
             {
