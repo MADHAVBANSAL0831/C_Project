@@ -143,6 +143,7 @@ int main()
     
     while (contFlag == 'y')
     {
+        system("clear");
         float total = 0;
         int invoiceFound = 0;
         printf("\t============ADV. RESTAURANT============");
@@ -158,6 +159,7 @@ int main()
         switch (opt)
         {
         case 1:
+            system("clear");
             printf("\nPlease enter the name of the customer:\t");
             fgets(ord.customer, 50, stdin);
             //printf("%d", strlen(ord.customer));
@@ -222,7 +224,7 @@ int main()
 
                 total += ord.itm[i].qty * ord.itm[i].price;
             }
-
+            system("clear");
             generateBillHeader(ord.customer, ord.date);
             for (int i = 0; i < ord.numOfItems; i++)
             {
@@ -246,6 +248,7 @@ int main()
             break;
 
         case 2:
+            system("clear"); 
             fp = fopen("RestaurantBill.txt", "r");
             printf("\n  *****Your Previous Invoices*****\n");
             while (fread(&order, sizeof(struct orders), 1, fp))
@@ -267,6 +270,7 @@ int main()
             // fgetc(stdin);
             fgets(name, 50, stdin);
             name[strlen(name) - 1] = 0;
+            system("clear");
             fp = fopen("RestaurantBill.txt", "r");
             printf("\t*****Invoice of %s*****", name);
             while (fread(&order, sizeof(struct orders), 1, fp))
