@@ -4,9 +4,11 @@ Bill Making Program (C)
 
 Table of Contents
 --> Introduction
+
 --> Features
 
 Introduction-->
+
 The Bill Making Program in C is a versatile and user-friendly tool designed to streamline the process of generating bills for products or services. This program provides a simple command-line interface that allows users to input essential item details, such as the item name, quantity, and price. It then automatically calculates the total amount and produces a well-structured and itemized bill.
 
 Managing bills and invoices is a fundamental aspect of various businesses, from small shops to large enterprises. This program is specifically developed to cater to the needs of businesses and individuals looking for an efficient and customizable solution for bill creation.
