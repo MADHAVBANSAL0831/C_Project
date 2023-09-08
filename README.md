@@ -3,6 +3,7 @@
 Bill Making Program (C)
 
 Table of Contents
+
 --> Introduction
 
 --> Features
